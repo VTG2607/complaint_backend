@@ -1,14 +1,14 @@
 from .models import Complaint, Category, Comments
-from rest_framework import serializers, generics
-
+from rest_framework import serializers
+from django.contrib.auth import get_user_model
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields={
+        fields=(
             "name",
-        }
+        )
 class ComplaintSerializer(serializers.ModelSerializer):
     class Meta:
         model = Complaint
@@ -37,3 +37,9 @@ class CommentsSerializer(serializers.ModelSerializer):
             "comment_author",
             "created_at",
         )
+
+
+class UserSerializer(serializers.ModelSerializer): 
+    class Meta:
+        model = get_user_model()
+        fields = ("id", "username","email")
