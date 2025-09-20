@@ -10,6 +10,8 @@ class CategorySerializer(serializers.ModelSerializer):
             "name",
         )
 class ComplaintSerializer(serializers.ModelSerializer):
+    created_by = serializers.StringRelatedField()
+    category = serializers.StringRelatedField()  #uses the str method
     class Meta:
         model = Complaint
         fields = (
@@ -23,11 +25,12 @@ class ComplaintSerializer(serializers.ModelSerializer):
             "priority",
             "status",
         )
-        
+        read_only_fields = ("created_by",) # read-only
 
 
 
 class CommentsSerializer(serializers.ModelSerializer):
+    comment_author = serializers.StringRelatedField()
     class Meta:
         model = Comments
         fields = (
@@ -37,7 +40,7 @@ class CommentsSerializer(serializers.ModelSerializer):
             "comment_author",
             "created_at",
         )
-
+        read_only_fields = ["comment_author"]
 
 class UserSerializer(serializers.ModelSerializer): 
     class Meta:

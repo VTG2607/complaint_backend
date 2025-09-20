@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from .models import Comments, Category, Complaint
-from .serializers import CommentsSerializer, ComplaintSerializer, CategorySerializer
+from .serializers import CommentsSerializer, ComplaintSerializer, CategorySerializer, UserSerializer
 from rest_framework import generics, permissions
 from .permissions import IsAuthororReadOnly, IsAdminOrReadOnly
+from django.contrib.auth import get_user_model,get_user
+from rest_framework import viewsets
+from rest_framework.exceptions import APIException
 
 
 
@@ -10,6 +13,20 @@ class ComplaintList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Complaint.objects.all()
     serializer_class = ComplaintSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user) #other users cannot set created_by
+
+
+class ComplaintListUser(generics.ListCreateAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Complaint.objects.all()
+    serializer_class = ComplaintSerializer
+    
+    def get_queryset(self):
+        return Complaint.objects.filter(created_by=self.request.user)  #returns the complaints of the specific user
+    
+
 
 
 class CommentsListCreate(generics.ListCreateAPIView):
@@ -28,6 +45,16 @@ class CommentsListCreate(generics.ListCreateAPIView):
             post_id = complaint_id,
             comment_author = self.request.user   # sets logged in user as the commenter, so u cant jsut use anyones account
         )
+
+
+class ComplaintListByCategory(generics.ListAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Complaint.objects.all()
+    serializer_class = ComplaintSerializer
+
+    def get_queryset(self):
+        category_id = self.kwargs.get("category_id")
+        return Complaint.objects.filter(category_id=category_id)
 
 
 
@@ -52,5 +79,22 @@ class CommentsDetail(generics.RetrieveUpdateDestroyAPIView):
 
 """class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthororReadOnly]   # Admin can delete categories/update them
-    queryset = Comments.objects.all()
-    serializer_class = CommentsSerializer"""
+    queryset = Category.objects.all()
+    serializer_class = CatgeorySerializer """
+
+
+
+class UserMe(generics.RetrieveAPIView):     #users can view data about themselves
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+
+    def get_object(self):
+        return self.request.user
+
+class UserViewSet(viewsets.ModelViewSet): # viewset for accessing the users
+    permission_classes = [permissions.IsAdminUser]
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+
+

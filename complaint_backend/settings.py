@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-q$6dqq09an9ezyh!yijs74d*n5u40_17wm#a*(3aoc4k)eciki
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -43,7 +43,15 @@ INSTALLED_APPS = [
     "corsheaders",
     # REST framework
     "rest_framework",
-    "rest_framework.authtoken",   
+    "rest_framework.authtoken",
+    #dj-rest-auth
+    'dj_rest_auth',
+    "dj_rest_auth.registration",
+    #dj all-auth,
+    'allauth',
+    'allauth.account',
+    "allauth.socialaccount",
+
 ]
 
 MIDDLEWARE = [
@@ -54,6 +62,7 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
+    "allauth.account.middleware.AccountMiddleware", #dj-allauth middleware
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
@@ -62,10 +71,11 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = (
 "http://localhost:3000",
 "http://localhost:8000",
+"http://localhost:5173",
 )
 
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]  # For react
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000","http://localhost: 5000"]  # For react
 
 ROOT_URLCONF = "complaint_backend.urls"
 
@@ -83,6 +93,10 @@ TEMPLATES = [
         },
     },
 ]
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" 
+
+SITE_ID = 1 # needed for djrestauth
 
 WSGI_APPLICATION = "complaint_backend.wsgi.application"
 
@@ -144,14 +158,23 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
     # Use Token authentication to pass credentialsm session authentication for browsable api
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
         "rest_framework.authentication.TokenAuthentication",
-    ]
+    ],
+    "EXCEPTION_HANDLER": "complaints.exceptions.custom_exception_handler",
 }
 
 
 AUTH_USER_MODEL = "accounts.CustomUser" # sets auth.user to our custom model
+
+
+ACCOUNT_SIGNUP_FIELDS = {
+    "username": {"required": True},
+    "email": {"required": True},
+    "password1": {"required": True},
+    "password2": {"required": True},
+}
