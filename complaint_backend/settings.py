@@ -73,20 +73,20 @@ MIDDLEWARE = [
 ]
 
 
-# new
-CORS_ORIGIN_WHITELIST = (
-"http://localhost:3000",
-"http://localhost:8000",
-"http://localhost:5173",
-)
 
 CORS_ALLOWED_ORIGINS = [
-    "https://vtg2607.github.io/complaint_frontend/",
+    "https://vtg2607.github.io",
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://localhost:5173",
+    ]
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:5000",
+    "https://vtg2607.github.io",
 ]
-
-
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000","http://localhost: 5000"]  # For react
-
 ROOT_URLCONF = "complaint_backend.urls"
 
 TEMPLATES = [
