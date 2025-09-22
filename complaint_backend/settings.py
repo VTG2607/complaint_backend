@@ -75,7 +75,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://vtg2607.github.io",
+    "https://vtg2607.github.io/complaint_frontend",
     "http://localhost:3000",
     "http://localhost:8000",
     "http://localhost:5173",
@@ -86,7 +86,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5000",
-    "https://vtg2607.github.io",
+    "https://vtg2607.github.io/complaint_frontend",
 ]
 ROOT_URLCONF = "complaint_backend.urls"
 
