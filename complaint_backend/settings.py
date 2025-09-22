@@ -87,6 +87,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5000",
     "https://vtg2607.github.io",
 ]
+
 ROOT_URLCONF = "complaint_backend.urls"
 
 TEMPLATES = [
@@ -157,7 +158,7 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = []  # or just comment it out
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" # new
 
