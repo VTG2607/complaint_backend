@@ -187,19 +187,13 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "accounts.CustomUser" # sets auth.user to our custom model
 
-REST_AUTH = {
-    'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer'
-}
 
 # 3. Also add these additional settings to be extra sure:
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
-OLD_PASSWORD_FIELD_ENABLED = False
-ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*']  # No password2!
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*','password2*']  # No password2!
 
 # Keep your other allauth settings:
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_REQUIRED = True
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
-
