@@ -185,16 +185,11 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "accounts.CustomUser" # sets auth.user to our custom model
 
+ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*']  # No password2!
 
-ACCOUNT_AUTHENTICATION_METHOD = 'username'  # or 'email' or 'username_email'
+# Keep your other allauth settings:
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'  # Important: prevents email verification issues
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_REQUIRED = True
-
-# 2. Password confirmation settings
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False  # Set to True if you want password2
-
-# Additional helpful settings:
-ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
-ACCOUNT_USER_MODEL_EMAIL_FIELD = 'email'
-
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
