@@ -81,7 +81,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
@@ -186,9 +185,15 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = "accounts.CustomUser" # sets auth.user to our custom model
 
 
-ACCOUNT_SIGNUP_FIELDS = {
-    "username": {"required": True},
-    "email": {"required": True},
-    "password1": {"required": True},
-    "password2": {"required": False},
-}
+ACCOUNT_AUTHENTICATION_METHOD = 'username'  # or 'email' or 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # Important: prevents email verification issues
+ACCOUNT_USERNAME_REQUIRED = True
+
+# 2. Password confirmation settings
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False  # Set to True if you want password2
+
+# Additional helpful settings:
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
+ACCOUNT_USER_MODEL_EMAIL_FIELD = 'email'
+
