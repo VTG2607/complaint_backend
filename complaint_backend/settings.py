@@ -121,7 +121,7 @@ DATABASES = {
 
 }
 
-
+PASSWORD_HASHERS = ['django.contrib.auth.hashers.PBKDF2PasswordHasher']
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -200,3 +200,14 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_REQUIRED = True
+
+if DEBUG:
+    from django.contrib.auth.hashers import PBKDF2PasswordHasher
+
+    class FastHasher(PBKDF2PasswordHasher):
+        iterations = 1000  # way faster for dev/staging
+
+    PASSWORD_HASHERS = [
+        'path.to.FastHasher',
+        'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    ]
