@@ -183,8 +183,17 @@ REST_FRAMEWORK = {
 }
 
 
+
+
 AUTH_USER_MODEL = "accounts.CustomUser" # sets auth.user to our custom model
 
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer'
+}
+
+# 3. Also add these additional settings to be extra sure:
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+OLD_PASSWORD_FIELD_ENABLED = False
 ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*']  # No password2!
 
 # Keep your other allauth settings:
