@@ -176,7 +176,6 @@ REST_FRAMEWORK = {
     ],
     # Use Token authentication to pass credentialsm session authentication for browsable api
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
         "rest_framework.authentication.TokenAuthentication",
     ],
     "EXCEPTION_HANDLER": "complaints.exceptions.custom_exception_handler",
