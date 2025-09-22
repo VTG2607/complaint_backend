@@ -189,5 +189,5 @@ ACCOUNT_SIGNUP_FIELDS = {
     "username": {"required": True},
     "email": {"required": True},
     "password1": {"required": True},
-    "password2": {"required": True},
+    "password2": {"required": False},
 }
