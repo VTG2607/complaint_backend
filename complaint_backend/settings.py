@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from environs import Env # new
+from django.contrib.auth.hashers import PBKDF2PasswordHasher
 
 env = Env() 
 env.read_env() 
@@ -201,8 +202,11 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_REQUIRED = True
 
+
+
 class FastHasher(PBKDF2PasswordHasher):
     iterations = 1000  # way faster for dev/staging
+
 
 
 PASSWORD_HASHERS = [
