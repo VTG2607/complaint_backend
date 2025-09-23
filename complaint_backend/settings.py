@@ -83,6 +83,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware", # Cors middleware
     "django.middleware.security.SecurityMiddleware",
+    "complaint_backend.middleware.sql_logging.QueryLoggingMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware", #whitenoise middleware
     "django.middleware.common.CommonMiddleware",
