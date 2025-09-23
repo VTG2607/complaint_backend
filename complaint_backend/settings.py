@@ -13,6 +13,26 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from environs import Env # new
 from django.contrib.auth.hashers import PBKDF2PasswordHasher
+from django.contrib.auth.hashers import BasePasswordHasher
+
+class DevFastHasher(BasePasswordHasher):
+    """
+    Insecure fast hasher
+    """
+    algorithm = "devfast"
+
+    def encode(self, password, salt):
+        return f"{self.algorithm}${password}"
+
+    def verify(self, password, encoded):
+        return encoded == f"{self.algorithm}${password}"
+
+    def safe_summary(self, encoded):
+        return {"password": encoded}
+
+    def harden_runtime(self, password, encoded):
+        pass  # do nothing
+
 
 env = Env() 
 env.read_env() 
@@ -210,7 +230,8 @@ class FastHasher(PBKDF2PasswordHasher):
 
 
 PASSWORD_HASHERS = [
+    'complaint_backend.settings.DevFastHasher',
     'django.contrib.auth.hashers.Argon2PasswordHasher',
-    'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher',
+    'complaint_backend.settings.FastHasher',  # correct import path
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 ]
