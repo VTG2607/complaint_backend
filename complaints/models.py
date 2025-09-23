@@ -31,7 +31,7 @@ class Complaint(models.Model):
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    category = models.ForeignKey(Category, max_length=10, null=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(Category, max_length=100, null=True, blank=True, on_delete=models.SET_NULL)
     priority = models.CharField(max_length=20, choices=Priority.choices, default=Priority.LOW)
     status = models.CharField(max_length=20, choices=Status.choices, default=Status.IN_PROGRESS)
 
