@@ -12,7 +12,7 @@ class CategorySerializer(serializers.ModelSerializer):
         )
 class ComplaintSerializer(serializers.ModelSerializer):
     created_by = serializers.StringRelatedField()
-    category = serializers.SlugRelatedField(queryset=Category.objects.all(),slug_field='name')
+    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
     class Meta:
         model = Complaint
         fields = (
