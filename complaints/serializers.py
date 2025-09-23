@@ -40,7 +40,7 @@ class CommentsSerializer(serializers.ModelSerializer):
             "comment_author",
             "created_at",
         )
-        read_only_fields = ["comment_author"]
+        read_only_fields = ["comment_author","post"]
 
 class UserSerializer(serializers.ModelSerializer): 
     class Meta:
