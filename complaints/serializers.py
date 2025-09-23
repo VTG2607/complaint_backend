@@ -11,7 +11,6 @@ class CategorySerializer(serializers.ModelSerializer):
         )
 class ComplaintSerializer(serializers.ModelSerializer):
     created_by = serializers.StringRelatedField()
-    category = serializers.StringRelatedField()  #uses the str method
     class Meta:
         model = Complaint
         fields = (
