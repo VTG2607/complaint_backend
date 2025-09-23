@@ -208,6 +208,14 @@ if DEBUG:
         iterations = 1000  # way faster for dev/staging
 
     PASSWORD_HASHERS = [
+        'django.contrib.auth.hashers.Argon2PasswordHasher',
         'path.to.FastHasher',
         'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
     ]
+
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'path.to.FastHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
