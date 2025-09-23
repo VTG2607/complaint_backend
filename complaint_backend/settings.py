@@ -83,7 +83,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware", # Cors middleware
     "django.middleware.security.SecurityMiddleware",
-    "complaint_backend.middleware.logging.QueryLoggingMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware", #whitenoise middleware
     "django.middleware.common.CommonMiddleware",
@@ -102,6 +101,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://localhost:5173",
 ]
+CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 
