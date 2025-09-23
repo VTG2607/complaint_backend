@@ -12,6 +12,7 @@ class CategorySerializer(serializers.ModelSerializer):
         )
 class ComplaintSerializer(serializers.ModelSerializer):
     created_by = serializers.StringRelatedField()
+    category_name = serializers.CharField(source="category.name", read_only=True)
     category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
     class Meta:
         model = Complaint
@@ -23,6 +24,7 @@ class ComplaintSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
             "category",
+            "category_name",
             "priority",
             "status",
         )
