@@ -231,7 +231,6 @@ class FastHasher(PBKDF2PasswordHasher):
 
 
 PASSWORD_HASHERS = [
-    'complaint_backend.settings.DevFastHasher',
     'django.contrib.auth.hashers.Argon2PasswordHasher',
     'complaint_backend.settings.FastHasher',  # correct import path
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
