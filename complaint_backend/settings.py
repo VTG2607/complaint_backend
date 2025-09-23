@@ -201,17 +201,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_REQUIRED = True
 
-if DEBUG:
-    from django.contrib.auth.hashers import PBKDF2PasswordHasher
-
-    class FastHasher(PBKDF2PasswordHasher):
-        iterations = 1000  # way faster for dev/staging
-
-    PASSWORD_HASHERS = [
-        'django.contrib.auth.hashers.Argon2PasswordHasher',
-        'path.to.FastHasher',
-        'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-    ]
+class FastHasher(PBKDF2PasswordHasher):
+    iterations = 1000  # way faster for dev/staging
 
 
 PASSWORD_HASHERS = [
