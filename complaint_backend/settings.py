@@ -209,19 +209,18 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "accounts.CustomUser" # sets auth.user to our custom model
 
-ACCOUNT_EMAIL_VERIFICATION = "none"
-ACCOUNT_EMAIL_REQUIRED = False
+
 
 # 3. Also add these additional settings to be extra sure:
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+
 ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*','password2']  # No password2!
 
 # Keep your other allauth settings:
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_REQUIRED = True
-
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 
 class FastHasher(PBKDF2PasswordHasher):
