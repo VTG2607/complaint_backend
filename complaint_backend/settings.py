@@ -127,13 +127,7 @@ TEMPLATES = [
     },
 ]
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
-DEFAULT_FROM_EMAIL = "noreply@gmail.com"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
 SITE_ID = 1 # needed for djrestauth
@@ -222,14 +216,10 @@ AUTH_USER_MODEL = "accounts.CustomUser" # sets auth.user to our custom model
 ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*','password2']  # No password2!
 
 #  allauth settings:
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
-ACCOUNT_CONFIRM_EMAIL_ON_GET = True
-ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "https://vtg2607.github.io/complaint_frontend/login"
-ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "https://vtg2607.github.io/complaint_frontend/"
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 class FastHasher(PBKDF2PasswordHasher):
     iterations = 1000  # way faster for dev/staging
