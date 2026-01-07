@@ -31,6 +31,7 @@ jobs:
       env:
         SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
         DEBUG: 'False'
+        DATABASE_URL: 'sqlite:///test_db.sqlite3'
       run: |
         python manage.py makemigrations --check --dry-run
 
@@ -38,6 +39,7 @@ jobs:
       env:
         SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
         DEBUG: 'False'
+        DATABASE_URL: 'sqlite:///test_db.sqlite3'
       run: |
         python manage.py test
 
