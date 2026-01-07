@@ -11,7 +11,7 @@ class CategorySerializer(serializers.ModelSerializer):
             "name",
         )
 
-
+#Complaint Serializer
 class ComplaintSerializer(serializers.ModelSerializer):
     created_by = serializers.StringRelatedField()
     category_name = serializers.CharField(source="category.name", read_only=True)
