@@ -2,7 +2,7 @@ from .models import Complaint, Category, Comments
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
-
+#Category Serializer
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
@@ -33,7 +33,7 @@ class ComplaintSerializer(serializers.ModelSerializer):
         read_only_fields = ("created_by",) # read-only
 
 
-
+#Comments Serializer
 class CommentsSerializer(serializers.ModelSerializer):
     comment_author = serializers.StringRelatedField()
     class Meta:
@@ -46,7 +46,8 @@ class CommentsSerializer(serializers.ModelSerializer):
             "created_at",
         )
         read_only_fields = ["comment_author","post"]
-
+        
+#User Serializer
 class UserSerializer(serializers.ModelSerializer): 
     class Meta:
         model = get_user_model()
