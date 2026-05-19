@@ -33,14 +33,14 @@ class Complaint(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, max_length=100, null=True, blank=True, on_delete=models.SET_NULL)
     priority = models.CharField(max_length=20, choices=Priority.choices, default=Priority.LOW)
-    status = models.CharField(max_length=20, choices=Status.choices, default=Status.IN_PROGRESS)
+    status = models.CharField(max_length=20, choices=Status.choices, default=Status.SUBMITTED)
 
     def __str__(self):
         return self.title
 
 
 class Comments(models.Model):
-    post = models.ForeignKey(Complaint, related_name="comments", on_delete=models.CASCADE)
+    complaint = models.ForeignKey(Complaint, related_name="comments", on_delete=models.CASCADE)
     comment_body = models.TextField()
     comment_author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,732 @@
+WARNING 2026-04-04 02:10:27,467 log 34172 19556 Not Found: /
+WARNING 2026-04-04 02:10:27,468 basehttp 34172 19556 "GET / HTTP/1.1" 404 3236
+WARNING 2026-04-04 02:10:27,554 log 34172 19556 Not Found: /favicon.ico
+WARNING 2026-04-04 02:10:27,555 basehttp 34172 19556 "GET /favicon.ico HTTP/1.1" 404 3287
+WARNING 2026-04-04 02:10:37,986 log 34172 19556 Not Found: /api
+WARNING 2026-04-04 02:10:37,987 basehttp 34172 19556 "GET /api HTTP/1.1" 404 3263
+WARNING 2026-04-04 02:10:51,881 log 34172 19556 Not Found: /api
+WARNING 2026-04-04 02:10:51,881 basehttp 34172 19556 "GET /api HTTP/1.1" 404 3263
+WARNING 2026-04-04 02:10:55,330 log 34172 19556 Not Found: /api/dj-rest-auth/
+WARNING 2026-04-04 02:10:55,331 basehttp 34172 19556 "GET /api/dj-rest-auth/ HTTP/1.1" 404 7730
+ERROR 2026-04-04 02:11:09,971 exceptions 34172 19556 Exception occurred: MethodNotAllowed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 173, in http_method_not_allowed
+    raise exceptions.MethodNotAllowed(request.method)
+rest_framework.exceptions.MethodNotAllowed: Method "GET" not allowed.
+WARNING 2026-04-04 02:11:10,117 log 34172 19556 Method Not Allowed: /api/dj-rest-auth/registration/
+WARNING 2026-04-04 02:11:10,118 basehttp 34172 19556 "GET /api/dj-rest-auth/registration/ HTTP/1.1" 405 8398
+ERROR 2026-04-04 02:11:25,189 exceptions 34172 19556 Exception occurred: MethodNotAllowed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 173, in http_method_not_allowed
+    raise exceptions.MethodNotAllowed(request.method)
+rest_framework.exceptions.MethodNotAllowed: Method "GET" not allowed.
+WARNING 2026-04-04 02:11:25,199 log 34172 19556 Method Not Allowed: /api/dj-rest-auth/registration/
+WARNING 2026-04-04 02:11:25,199 basehttp 34172 19556 "GET /api/dj-rest-auth/registration/ HTTP/1.1" 405 8398
+ERROR 2026-04-04 02:11:56,699 exceptions 34172 3296 Exception occurred: MethodNotAllowed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 173, in http_method_not_allowed
+    raise exceptions.MethodNotAllowed(request.method)
+rest_framework.exceptions.MethodNotAllowed: Method "GET" not allowed.
+WARNING 2026-04-04 02:11:56,704 log 34172 3296 Method Not Allowed: /api/dj-rest-auth/login
+WARNING 2026-04-04 02:11:56,705 basehttp 34172 3296 "GET /api/dj-rest-auth/login HTTP/1.1" 405 8250
+ERROR 2026-04-04 02:12:09,305 exceptions 34172 26060 Exception occurred: MethodNotAllowed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 173, in http_method_not_allowed
+    raise exceptions.MethodNotAllowed(request.method)
+rest_framework.exceptions.MethodNotAllowed: Method "GET" not allowed.
+WARNING 2026-04-04 02:12:09,310 log 34172 26060 Method Not Allowed: /api/dj-rest-auth/login
+WARNING 2026-04-04 02:12:09,311 basehttp 34172 26060 "GET /api/dj-rest-auth/login HTTP/1.1" 405 8250
+ERROR 2026-05-19 12:58:19,645 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:58:19,757 log 18908 27988 Unauthorized: /api/complaint/me/
+WARNING 2026-05-19 12:58:19,757 basehttp 18908 27988 "GET /api/complaint/me/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 12:58:19,766 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:58:19,766 log 18908 27988 Unauthorized: /api/complaint/me/
+WARNING 2026-05-19 12:58:19,766 basehttp 18908 27988 "GET /api/complaint/me/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 12:58:21,538 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:58:21,538 log 18908 27988 Unauthorized: /api/complaint/me/
+WARNING 2026-05-19 12:58:21,538 basehttp 18908 27988 "GET /api/complaint/me/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 12:58:21,563 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:58:21,566 log 18908 27988 Unauthorized: /api/complaint/me/
+WARNING 2026-05-19 12:58:21,566 basehttp 18908 27988 "GET /api/complaint/me/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 12:58:29,094 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:58:29,098 log 18908 27988 Unauthorized: /api/me/
+WARNING 2026-05-19 12:58:29,099 basehttp 18908 27988 "GET /api/me/ HTTP/1.1" 401 86
+ERROR 2026-05-19 12:58:29,117 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+ERROR 2026-05-19 12:58:29,117 exceptions 18908 980 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:58:29,125 log 18908 27988 Unauthorized: /api/complaint/100/
+WARNING 2026-05-19 12:58:29,125 log 18908 980 Unauthorized: /api/me/
+WARNING 2026-05-19 12:58:29,125 basehttp 18908 27988 "GET /api/complaint/100/ HTTP/1.1" 401 86
+WARNING 2026-05-19 12:58:29,125 basehttp 18908 980 "GET /api/me/ HTTP/1.1" 401 86
+ERROR 2026-05-19 12:58:29,134 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:58:29,136 log 18908 27988 Unauthorized: /api/complaint/100/
+WARNING 2026-05-19 12:58:29,136 basehttp 18908 27988 "GET /api/complaint/100/ HTTP/1.1" 401 86
+ERROR 2026-05-19 12:58:37,115 exceptions 18908 980 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+ERROR 2026-05-19 12:58:37,115 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:58:37,122 log 18908 980 Unauthorized: /api/me/
+WARNING 2026-05-19 12:58:37,126 log 18908 27988 Unauthorized: /api/complaint/3/
+WARNING 2026-05-19 12:58:37,126 basehttp 18908 980 "GET /api/me/ HTTP/1.1" 401 86
+WARNING 2026-05-19 12:58:37,126 basehttp 18908 27988 "GET /api/complaint/3/ HTTP/1.1" 401 86
+ERROR 2026-05-19 12:58:37,130 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+ERROR 2026-05-19 12:58:37,130 exceptions 18908 980 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:58:37,138 log 18908 27988 Unauthorized: /api/me/
+WARNING 2026-05-19 12:58:37,138 log 18908 980 Unauthorized: /api/complaint/3/
+WARNING 2026-05-19 12:58:37,138 basehttp 18908 27988 "GET /api/me/ HTTP/1.1" 401 86
+WARNING 2026-05-19 12:58:37,138 basehttp 18908 980 "GET /api/complaint/3/ HTTP/1.1" 401 86
+ERROR 2026-05-19 12:59:05,850 exceptions 18908 980 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:59:05,853 log 18908 980 Unauthorized: /api/complaint/me/
+WARNING 2026-05-19 12:59:05,853 basehttp 18908 980 "GET /api/complaint/me/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 12:59:05,859 exceptions 18908 980 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 12:59:05,859 log 18908 980 Unauthorized: /api/complaint/me/
+WARNING 2026-05-19 12:59:05,859 basehttp 18908 980 "GET /api/complaint/me/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 13:00:26,093 exceptions 18908 980 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 13:00:26,096 log 18908 980 Unauthorized: /api/complaint/me/
+WARNING 2026-05-19 13:00:26,096 basehttp 18908 980 "GET /api/complaint/me/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 13:00:26,096 exceptions 18908 980 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 13:00:26,104 log 18908 980 Unauthorized: /api/complaint/me/
+WARNING 2026-05-19 13:00:26,104 basehttp 18908 980 "GET /api/complaint/me/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 13:00:29,103 exceptions 18908 27988 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 13:00:29,108 log 18908 27988 Unauthorized: /api/complaint/category/2/
+WARNING 2026-05-19 13:00:29,108 basehttp 18908 27988 "GET /api/complaint/category/2/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 13:00:31,240 exceptions 18908 36364 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 13:00:31,244 log 18908 36364 Unauthorized: /api/complaint/category/4/
+WARNING 2026-05-19 13:00:31,244 basehttp 18908 36364 "GET /api/complaint/category/4/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 13:00:34,095 exceptions 18908 37560 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 13:00:34,103 log 18908 37560 Unauthorized: /api/complaint/category/3/
+WARNING 2026-05-19 13:00:34,103 basehttp 18908 37560 "GET /api/complaint/category/3/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 13:00:37,228 exceptions 18908 37560 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 13:00:37,230 log 18908 37560 Unauthorized: /api/complaint/category/3/
+WARNING 2026-05-19 13:00:37,231 basehttp 18908 37560 "GET /api/complaint/category/3/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 13:00:38,985 exceptions 18908 37560 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 13:00:38,993 log 18908 37560 Unauthorized: /api/complaint/category/3/
+WARNING 2026-05-19 13:00:38,993 basehttp 18908 37560 "GET /api/complaint/category/3/?page=1&page_size=15 HTTP/1.1" 401 86
+ERROR 2026-05-19 13:00:40,941 exceptions 18908 37560 Exception occurred: AuthenticationFailed
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+rest_framework.authtoken.models.Token.DoesNotExist: Token matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\complaint-system\.venv\Lib\site-packages\rest_framework\authentication.py", line 203, in authenticate_credentials
+    raise exceptions.AuthenticationFailed(_('Invalid token.'))
+rest_framework.exceptions.AuthenticationFailed: Invalid token.
+WARNING 2026-05-19 13:00:40,943 log 18908 37560 Unauthorized: /api/complaint/category/2/
+WARNING 2026-05-19 13:00:40,943 basehttp 18908 37560 "GET /api/complaint/category/2/?page=1&page_size=15 HTTP/1.1" 401 86
