@@ -19,7 +19,7 @@ class ComplaintList(generics.ListCreateAPIView):
 
 
 class ComplaintListUser(generics.ListCreateAPIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticated]
     queryset = Complaint.objects.all()
     serializer_class = ComplaintSerializer
     
@@ -36,13 +36,13 @@ class CommentsListCreate(generics.ListCreateAPIView):
     
     def get_queryset(self):
         complaint_id = self.kwargs.get("complaint_id")
-        return Comments.objects.filter(post_id=complaint_id) # Django automatically stores the linked complaint’s primary key in a column called post_id.
+        return Comments.objects.filter(complaint_id=complaint_id)
 
 
     def perform_create(self, serializer):
         complaint_id = self.kwargs.get("complaint_id")
         serializer.save(
-            post_id = complaint_id,
+                complaint_id = complaint_id,
             comment_author = self.request.user   # sets logged in user as the commenter, so u cant jsut use anyones account
         )
 
